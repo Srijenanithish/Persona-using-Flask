@@ -11,7 +11,6 @@ def gfg():
     if request.method == "POST":
        # getting input with name = fname in HTML form
        f = request.form.get("fname")
-       # getting input with name = lname in HTML form 
        if f[0] == 'a' or f[0] == 'A' :
          result = " You are looking to hone your skills and bring a fresh innovative eye to your work, as the hard-working Virgo moon links up with originality-craving Uranus. Elsewhere, messenger Mercury locks eyes with aspirational Jupiter. This pairing helps you think and dream big when it comes to goal-setting, but it may also increase expectations beyond a realistic standard."
          return render_template("form.html",result = result)
@@ -98,4 +97,4 @@ def gfg():
     return render_template("form.html")
   
 if __name__=='__main__':
-   app.run(debug=False,host='0.0.0.0')
+   app.run(debug=True,host='0.0.0.0')
