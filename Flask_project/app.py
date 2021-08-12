@@ -10,7 +10,7 @@ def gfg():
     
     if request.method == "POST":
        # getting input with name = fname in HTML form
-       f = request.form.get("fname")
+       f = request.form.get("fname")  
        if f[0] == 'a' or f[0] == 'A' :
          result = " You are looking to hone your skills and bring a fresh innovative eye to your work, as the hard-working Virgo moon links up with originality-craving Uranus. Elsewhere, messenger Mercury locks eyes with aspirational Jupiter. This pairing helps you think and dream big when it comes to goal-setting, but it may also increase expectations beyond a realistic standard."
          return render_template("form.html",result = result)
@@ -89,6 +89,9 @@ def gfg():
        elif f[0] == 'z' or f[0] == 'Z':
          result = " If you dream of a promotion, this is YOUR week to show off your talents and skills. The Sun and Venus want you to shine and to show people exactly what you are capable of. Some good financial news will put a smile on your face this weekend."
          return render_template("form.html",result = result) 
+       elif len(f) == 0:
+         result = "Your name cannot be Empty"
+         return render_template("form.html",result = result)     
        else:
          result="Enter a valid Name"  
          return render_template("form.html",result = result) 
